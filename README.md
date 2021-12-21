@@ -28,7 +28,7 @@
 - 예습하기
 ![preview](./img/preview.png)
 - 세션 진행
-![session](./img/session.png)
+![session_chat](./img/session_chat.jpg)
 - 피드백(대화 스크립트)
 ![script](./img/script.png)
 - 피드백(어휘 분석)
