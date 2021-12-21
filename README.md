@@ -1,130 +1,37 @@
-# verpic-backend
+버픽
+====
 
-verpic의 backend Server Repository
+### [프로젝트 설명]
+- 버픽은 서로의 언어를 배우고 싶은 유저 간의 매칭을 통해 화상 세션을 진행합니다.
+- 화상 세션의 대화 내용을 텍스트로 변환하여 인공지능 모델을 이용해서 유저의 언어학습에 도움이 되는 결과물을 생성합니다.
 
+### [담당 역할]
+- 백엔드 엔지니어
+- 자세 유사도 알고리즘 구현
 
-1. 커밋 메시지 작성 시 https://doublesprogramming.tistory.com/256 참고해서 커밋 컨벤션에 맞게 작성해주세요.
+### [기술스택]
+ - Springboot, Mysql, Django, MongoDB, React, Docker, EC2, Jenkins
 
-2. docker 사용법
+### [상세구현]
+- WebRTC 기능을 이용한 화상 세션기능
+- Google STT API를 이용한 음성 인식 기능
+- Pororo API를 이용한 언어 처리모델
 
-- Dockerfile 설정 빌드 이용하지 않고, 구글에서 자바 프로젝트 이미지 처리를 위해 만든 jibDockerBuild를 사용했어요.
+### [성과 및 결과]
+- Oauth2를 이용한 로그인 기능과 JWT 토큰 기반 인증을 구현하였습니다.
+- Google cloud SDK를 이용하여 Google STT API를 사용하는 과정을 알 수 있었습니다.
+- CI/CD를 구현하는 과정에 대해서 배우게 되었습니다.
 
-## [설치 요소]
-- java 11
-- docker
-- docker-compose
-
-## [도커 실행]
-
-1. 도커 이미지 빌드: 
-
-```
-./gradlew build jibDockerBuild
-```
-2. 도커 컨테이너 생성 및 이미지 실행
-
-```
-docker-compose up
-```
-
-## [Docker 컨테이너 관련]
-- 도커 서비스 시작 (컨테이너가 이미 있는 상태에서)
-
-```
-docker-compose start
-```
-- 서비스 중지
-
-```
-docker-compose stop
-```
-- 도커 푸시, 풀(도커 원격 저장소에서 이미지 받아오기)
-```
-docker push [내이름/이미지이름]
-docker pull [내이름/이미지이름]
-```
-
-## [Docker Database CLI 접속]
-
-
-1. 실행중인 컨테이너 정보 확인
-```
-docker ps -a
-```
-
-2. 도커 컨테이너 CLI 접속
-```
-docker exec -i -t [컨테이너id 또는 이름] bash 
-```
-
-3-1. MySQL
-
-```
-mysql -u [아이디] -p [패스워드]
-
-```
-
-3-2. MongoDB
-
-[초기 설정]
-
-- 처음 접속
-``` 
-mongo
-```
-
-- 처음 접속 후 user 설정 해줘야 함.
-- admin 데이터베이스 접속 및 user정보 생성
-```
-use admin
-db.createUser({user: "verpic", pwd: "verpic", roles:["root"]})
-```
-
-- 이후에 자유롭게 Database 사용
-
-- Database 목록 확인
-
-```
-show dbs;
-```
-
-- 특정 Database 사용(해당 Database 존재하지 않을 때 자동생성 됨)
-```
-use databaseName
-```
-
-- database 내 collection(RDB의 Table과 동일) 생성, Spring Boot의 Domain과 연결해놨기 때문에 실험용이 아니면 임의로 생성할 일은 없을듯.
-```
-db.createCollections("name")
-```
-
-- collection 내용 보기
-
-```
-db.collectionName.find()
-```
-
-
-
-## [jibDockerBuild시 오류 사항]
-
-
-1. Test 포함하여 이미지 빌드 했을 때
-```
-VerpicBackendApplicationTests > contextLoads() FAILED
-
-
-> Task :test FAILED
-
-FAILURE: Build failed with an exception.
-```
-
--  test/java/teamverpic.verpicbackend/VerpicBackendApplicationTests에 @SpringBootTest annotation을 주석처리하고 다시 빌드해보세요.
-
-
-
-## [참고사항]
-- 도커 실행 시 프로젝트 이미지와 데이터베이스 이미지 모두 실행되는데, 매번 프로젝트 이미지를 실행해서 도커 컨테이너에서 실행하기에는 번거로워요.
-- 도커 컨테이너에서 프로젝트 이미지(verpic-backend)는 중지하고, 데이터베이스 이미지만 실행시켜주세요(개발 시 도커는 데이터베이스 사용 용도로만). 그런 다음 InteliJ에서 프로젝트를 따로 실행하는 것이 편리해요.
-
-
+### [서비스 화면]
+- 토픽 목록 및 스터디 신청
+![reserve](./img/reserve.png)
+- 예습하기
+![preview](./img/preview.png)
+- 세션 진행
+![session](./img/session.png)
+- 피드백(대화 스크립트)
+![script](./img/script.png)
+- 피드백(어휘 분석)
+![voca](./img/voca.png)
+- 피드백(대화 속도)
+![speed](./img/speed.png)
