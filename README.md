@@ -10,7 +10,6 @@
 
 ### [담당 역할]
 - 백엔드 엔지니어
-- 자세 유사도 알고리즘 구현
 
 ### [기술스택]
  - Springboot, Mysql, Django, MongoDB, React, Docker, EC2, Jenkins
