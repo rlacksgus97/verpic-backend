@@ -23,9 +23,10 @@
 - Pororo API를 이용한 언어 처리모델
 
 ### [성과 및 결과]
-- Oauth2를 이용한 로그인 기능과 JWT 토큰 기반 인증을 구현하였습니다.
-- Google cloud SDK를 이용하여 Google STT API를 사용하는 과정을 알 수 있었습니다.
-- CI/CD를 구현하는 과정에 대해서 배우게 되었습니다.
+- Oauth2를 이용한 로그인 기능과 JWT 토큰 기반 인증
+- Jenkins와 Github Webhook, Docker를 이용한 CI/CD 구축
+- Docker 및 Docker Compose를 이용한 컨테이너 환경 구축
+- DNS 설정, HTTPS 설정
 
 ### [서비스 화면]
 - 토픽 목록 및 스터디 신청
