@@ -7,6 +7,8 @@
 
 ### [프로젝트 아키텍처]
 ![arch](./img/architecture.png)
+
+### [컴포넌트 간 상호작용]
 ![detail](./img/detail.png)
 
 ### [담당 역할]
